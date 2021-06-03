@@ -1,0 +1,34 @@
+.navigation__profile-button {
+    width: 100px;
+    background: rgba(249, 249, 249, 1);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+    text-decoration: none;
+    letter-spacing: 0px;
+    text-align: center;
+    height: 32px;
+    border-radius: 20px;
+    color: rgba(0, 0, 0, 1);
+    margin: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .navigation__profile-button {
+        margin-bottom: 90px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .navigation__profile-button {
+        margin-bottom: 46px;
+    }
+}
+
+.navigation__profile-button:hover {
+    opacity: 0.6;
+    transition: opacity 1s ease-out;
+    cursor: pointer;
+}

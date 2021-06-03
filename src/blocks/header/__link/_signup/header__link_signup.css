@@ -1,0 +1,12 @@
+.header__link_signup {
+    min-width: 64px;
+    background-color: transparent;
+    color: rgba(0, 0, 0, 1);
+    margin-right: 30px;
+}
+
+@media screen and (max-width: 550px) {
+    .header__link_signup {
+        margin-right: 14px;
+    }
+}

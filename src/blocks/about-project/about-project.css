@@ -1,0 +1,12 @@
+@import url(./__info-container/about-project__info-container.css);
+@import url(./__column/about-project__column.css);
+@import url(./__heading/about-project__heading.css);
+@import url(./__diagram/about-project__diagram.css);
+@import url(./__data/_backend/about-project__data_backend.css);
+@import url(./__data/_frontend/about-project__data_frontend.css);
+@import url(./__data/_caption/about-project__data_caption.css);
+@import url(./__data/about-project__data.css);
+
+.about-project {
+    background-color: rgba(255, 255, 255, 1);
+}

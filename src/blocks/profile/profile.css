@@ -1,0 +1,16 @@
+@import url(./__container/profile__container.css);
+@import url(./__form/profile__form.css);
+@import url(./__title/profile__title.css);
+@import url(./__input-container/profile__input-container.css);
+@import url(./__input/profile__input.css);
+@import url(./__input-name/profile__pinput-name.css);
+@import url(./__form-container/profile__form-container.css);
+@import url(./__edit-button/profile__edit-button.css);
+@import url(./__exit-button/profile__exit-button.css);
+
+.profile {
+    background-color: white;
+    display: flex;
+    width: 100vw;
+    height: calc(100vh-74px);
+}

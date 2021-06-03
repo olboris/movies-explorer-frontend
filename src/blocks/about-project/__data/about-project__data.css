@@ -1,0 +1,19 @@
+.about-project__data {
+    height: auto;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0;
+    padding: 9px 0px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+@media screen and (max-width: 578px) {
+    .about-project__data {
+        font-size: 11px;
+        line-height: 13px;
+    }
+}

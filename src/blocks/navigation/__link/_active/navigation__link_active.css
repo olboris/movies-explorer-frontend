@@ -1,0 +1,6 @@
+
+@media screen and (max-width: 1024px) {
+    .navigation__link_active {
+        text-decoration: underline;
+    }
+}

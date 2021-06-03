@@ -1,0 +1,11 @@
+@import url(./__heading/portfolio__heading.css);
+@import url(./__links-container/portfolio__links-container.css);
+@import url(./__link/portfolio__link.css);
+@import url(./__link/_last-item/portfolio__link_last-item.css);
+@import url(./__project-name/portfolio__project-name.css);
+@import url(./__pointer/portfolio__pointer.css);
+
+.portfolio {
+    padding: 0px;
+    margin: 0px;
+}

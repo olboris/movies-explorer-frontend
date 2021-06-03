@@ -1,0 +1,6 @@
+.auth-page__redirect-span_link {
+    color: rgba(0, 0, 0, 1);
+    cursor: pointer;
+    text-decoration: none;
+    margin: 0;
+}

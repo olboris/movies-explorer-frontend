@@ -1,0 +1,10 @@
+.logo_place_auth-page {
+    margin: 0 auto 40px 0;
+}
+
+@media screen and (max-width: 550px) {
+    .logo_place_auth-page {
+        margin: 0 auto 50px;
+        display: block;
+    }
+}

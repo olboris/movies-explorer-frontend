@@ -1,0 +1,9 @@
+.filter-checkbox__toggle {
+    isolation: isolate;
+    position: relative;
+    height: 20px;
+    width: 36px;
+    border-radius: 20px;
+    background: rgba(235, 235, 235, 1);
+    overflow: hidden;
+}

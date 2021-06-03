@@ -1,0 +1,20 @@
+.techs__element {
+    height: 60px;
+    border-radius: 10px;
+    background-color: rgba(232, 232, 232, 1);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 60px;
+    letter-spacing: -0.04em;
+    text-align: center;
+    margin: 0px;
+}
+
+@media screen and (max-width: 1024px) {
+    .techs__element {
+        font-size: 12px;
+        height: 57px;
+    }
+}

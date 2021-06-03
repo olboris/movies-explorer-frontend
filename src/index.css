@@ -1,13 +1,23 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+@import url(./vendor/normalize.css);
+@import url(./vendor/fonts/fonts.css);
+@import url(./blocks/page/page.css);
+@import url(./blocks/section/section.css);
+@import url(./blocks/promo/promo.css);
+@import url(./blocks/about-project/about-project.css);
+@import url(./blocks/techs/techs.css);
+@import url(./blocks/about-me/about-me.css);
+@import url(./blocks/portfolio/portfolio.css);
+@import url(./blocks/footer/footer.css);
+@import url(./blocks/movies-card/movies-card.css);
+@import url(./blocks/movies-cardlist/movies-cardlist.css);
+@import url(./blocks/search-form/search-form.css);
+@import url(./blocks/filter-checkbox/filter-checkbox.css);
+@import url(./blocks/content/content.css);
+@import url(./blocks/header/header.css);
+@import url(./blocks/navigation/navigation.css);
+@import url(./blocks/auth-page/auth-page.css);
+@import url(./blocks/logo/logo.css);
+@import url(./blocks/menu-button/menu-button.css);
+@import url(./blocks/preloader/preloader.css);
+@import url(./blocks/not-found/not-found.css);
+@import url(./blocks/profile/profile.css);

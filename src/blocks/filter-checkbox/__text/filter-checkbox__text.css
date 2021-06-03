@@ -1,0 +1,26 @@
+.filter-checkbox__text {
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    margin-left: 14px;
+}
+
+@media screen and (min-width: 550px) and (max-width: 1024px) {
+    .filter-checkbox__text {
+    font-size: 11px;
+    margin-left: 0px;
+    margin-right: 16px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .filter-checkbox__text {
+    font-size: 11px;
+    margin-left: 0px;
+    margin-right: 13px;
+    }
+}

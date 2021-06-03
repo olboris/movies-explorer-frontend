@@ -1,0 +1,8 @@
+.auth-page__container {
+    width: 80%;
+    max-width: 396px;
+    height: 89%;
+    max-height: 560px;
+    margin: auto;
+    display: flex;
+}

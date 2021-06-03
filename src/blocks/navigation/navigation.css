@@ -1,0 +1,30 @@
+@import url(./_hidden/navigation_hidden.css);
+@import url(./__link/navigation__link.css);
+@import url(./__link/_active/navigation__link_active.css);
+@import url(./__links-container/navigation__links-container.css);
+@import url(./__container/navigation__container.css);
+@import url(./__profile-button/navigation__profile-button.css);
+@import url(./__close-button/navigation__close-button.css);
+@import url(./_active/navigation_active.css);
+
+.navigation {
+    height: 74px;
+    background-color: white;
+    padding-right: 70px;
+    padding-left: 70px;
+}
+
+@media screen and (max-width: 1024px) {
+    .navigation{
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.3);
+        width: 100vw;
+        height: 100vh;
+        visibility: hidden;
+        opacity: 1;
+        width: 100wh;
+        height: 100vh;
+        z-index: 1;
+        padding: 0;
+    }
+}

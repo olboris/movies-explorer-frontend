@@ -1,0 +1,25 @@
+.about-me__info-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: stretch;
+    margin: 66px 0px 100px;
+    height: auto;
+    width: 100%;
+}
+
+@media screen and (min-width: 700px) and (max-width: 1024px) {
+    .about-me__info-container {  
+        margin-bottom: 90px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .about-me__info-container {
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 69px;
+        margin-top: 60px;
+    }
+}
+

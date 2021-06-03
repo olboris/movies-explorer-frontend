@@ -1,0 +1,22 @@
+@import url(./__toggle/filter-checkbox__toggle.css);
+@import url(./__indicator/filter-checkbox__indicator.css);
+@import url(./__toggle-inner/filter-checkbox__toggle-inner.css);
+@import url(./__toggle-state/filter-checkbox__toggle-state.css);
+@import url(./__text/filter-checkbox__text.css);
+
+.filter-checkbox {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .filter-checkbox {
+        flex-direction: row-reverse;
+    }
+}
+
+.filter-checkbox__toggle-state:checked ~ .filter-checkbox__toggle-inner .filter-checkbox__indicator {
+    transform: translate3d(90%, 0, 0);
+    background:  rgba(43, 224, 128, 1);
+}

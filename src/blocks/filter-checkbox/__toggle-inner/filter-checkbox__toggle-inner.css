@@ -1,0 +1,10 @@
+.filter-checkbox__toggle-inner {
+    z-index: 2;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    height: 18px;
+    width: 34px;
+    border-radius: 20px;
+    overflow: hidden;
+}

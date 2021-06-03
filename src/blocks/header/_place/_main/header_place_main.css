@@ -1,0 +1,10 @@
+.header_place_main {
+    background-color: rgba(243, 193, 248, 1);
+    visibility: visible;
+}
+
+/*@media screen and (max-width: 1024px) {
+    .header_place_main {
+      visibility: visible;
+    }
+}*/

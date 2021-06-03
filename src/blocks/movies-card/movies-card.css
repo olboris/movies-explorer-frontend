@@ -1,0 +1,20 @@
+@import url(./__like/movies-card__like.css);
+@import url(./__like/_active/movies-card__like_active.css);
+@import url(./__like/_delete/movies-card__like_delete.css);
+@import url(./__poster/movies-card__poster.css);
+@import url(./__description/movies-card__description.css);
+@import url(./__title/movies-card__title.css);
+@import url(./__duration/movies-card__duration.css);
+
+.movies-card {
+    width: 100%;
+    align-items: center;
+    background-color: #FFFFFF;
+    position: relative;
+}
+
+@media screen and (min-width: 550px) {
+    .movies-card:hover {
+        cursor: pointer;
+    }
+}

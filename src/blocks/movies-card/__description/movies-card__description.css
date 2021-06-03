@@ -1,0 +1,21 @@
+.movies-card__description {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    width: calc(100%-28px);
+    padding: 0px 14px;
+}
+
+@media screen and (max-width:1024px) {
+    .movies-card__description {
+        padding: 0px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .movies-card__description {
+        margin-top: 16px;
+        width: 100%;
+    }
+}

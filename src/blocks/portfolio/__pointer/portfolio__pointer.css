@@ -1,0 +1,15 @@
+.portfolio__pointer {
+    width: 29px
+}
+
+@media screen and (min-width: 550px) and (max-width: 1024px) {
+    .portfolio__pointer {
+        width: 27px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .portfolio__pointer {
+        width: 18px;
+    }
+}

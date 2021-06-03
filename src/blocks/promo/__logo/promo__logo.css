@@ -1,0 +1,23 @@
+.promo__logo {
+    width: 310px;
+    height: 304px;
+    position: absolute;
+    right: 70px;
+    top: 75px;
+}
+
+@media screen and (min-width: 550px) and (max-width: 1024px) {
+    .promo__logo {       
+        position: static;
+        margin-bottom: 48px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .promo__logo {
+        position: static;
+        width: 210px;
+        height: 206px;
+        margin-bottom: 44px;
+    }
+}

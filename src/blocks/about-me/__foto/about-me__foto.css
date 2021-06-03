@@ -1,0 +1,19 @@
+.about-me__foto {
+    width: 270px;
+    height: auto; 
+    border-radius: 10px;
+}
+
+@media screen and (min-width: 700px) and (max-width: 1024px) {
+    .about-me__foto {  
+        width: 38%;    
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .about-me__foto {
+        width: 100%;
+        height: auto;
+    }
+}

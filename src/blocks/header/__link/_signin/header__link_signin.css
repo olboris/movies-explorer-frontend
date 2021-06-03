@@ -1,0 +1,6 @@
+.header__link_signin {
+    min-width: 54px;
+    background: rgba(0, 0, 0, 1);
+    color: rgba(255, 255, 255, 1);
+    border-radius: 3px;
+}

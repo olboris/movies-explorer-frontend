@@ -1,0 +1,13 @@
+@import url(./__elements-container/techs__elements-container.css);
+@import url(./__element/techs__element.css);
+@import url(./__title/techs__title.css);
+
+.techs {
+    background-color: rgb(245, 245, 245, 1);
+}
+
+@media screen and (min-width: 1024px) {
+    .techs {
+        padding: 100px 70px;
+    }
+}

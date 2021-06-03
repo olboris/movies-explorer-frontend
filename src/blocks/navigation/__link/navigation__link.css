@@ -1,0 +1,28 @@
+@import url(./_active/navigation__link_active.css);
+@import url(./_main/navigation__link_main.css);
+
+.navigation__link {
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: right;
+    color: rgba(0, 0, 0, 1);
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .navigation__link {
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+    }
+}
+
+.navigation__link:hover {
+    opacity: 0.6;
+    transition: opacity 1s ease-out;
+    cursor: pointer;
+}

@@ -1,0 +1,18 @@
+@import url(./_hidden/menu-button_hidden.css);
+
+.menu-button {
+    background-image: url(../../images/menu-button.svg);
+    background-position: center;
+    background-size: auto;
+    background-color: white;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    border: none;
+}
+
+.menu-button:hover {
+    opacity: 0.6;
+    transition: opacity 1s ease-out;
+    cursor: pointer;
+}

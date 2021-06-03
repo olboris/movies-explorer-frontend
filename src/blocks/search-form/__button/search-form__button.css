@@ -1,0 +1,16 @@
+.search-form__button {
+    width: 59px;
+    height: 34px;
+    border-radius: 48px;
+    background-color: rgba(0, 0, 0, 1);
+    color: rgba(255, 255, 255, 1);
+    font-family: Inter;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0px;
+    text-align: center;
+    border-color: rgba(0, 0, 0, 1);
+    cursor: pointer;
+}

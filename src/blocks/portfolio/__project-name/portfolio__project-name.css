@@ -1,0 +1,23 @@
+.portfolio__project-name {
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+    letter-spacing: -0.04em;
+    text-align: left;
+    color: rgba(0, 0, 0, 1);
+}
+
+@media screen and (min-width: 550px) and (max-width: 1024px) {
+    .portfolio__project-name {
+        font-size: 28px;
+    }  
+}
+
+@media screen and (max-width: 550px) {
+    .portfolio__project-name {
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
