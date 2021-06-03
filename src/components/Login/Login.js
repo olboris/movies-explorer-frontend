@@ -12,10 +12,10 @@ function Login(props) {
               <img className="logo logo_place_auth-page" alt="Лого" src={miniLogo}></img>
               <h2 className="auth-page__title">Рады видеть!</h2>
               <span className="auth-page__placeholder">Email</span>
-              <input name="email" type="email" className="auth-page__input" />
+              <input name="email" required type="email" className="auth-page__input" />
               <span className="auth-page__input-error"></span>
               <span className="auth-page__placeholder">Пароль</span>
-              <input name="password" type="password" className="auth-page__input" />
+              <input name="password" required type="password" className="auth-page__input" />
               <span className="auth-page__input-error"></span>
             </div>
             <div className="auth-page__form-container">

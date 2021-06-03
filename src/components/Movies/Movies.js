@@ -7,7 +7,7 @@ function Movies(props) {
     return (
       <main className="content">
         <SearchForm />
-        <MoviesCardList movies={props.movies}/>
+        <MoviesCardList onMovieLike={props.onMovieLike} isMovieSaved={props.isMovieSaved} movies={props.movies}/>
           <button type="button" className="movies-cardlist__more-button">Ещё</button>
       </main>
     ); 

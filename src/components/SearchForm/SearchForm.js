@@ -6,7 +6,7 @@ function SearchForm(props) {
     return (
         <form className="search-form">
           <div className="search-form__container">
-            <input type="text" placeholder="Фильм" className="search-form__input"></input>
+            <input type="text" required placeholder="Фильм" className="search-form__input"></input>
             <button className="search-form__button">Найти</button>
           </div>
           <FilterCheckbox />

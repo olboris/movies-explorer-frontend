@@ -73,9 +73,25 @@ const initialMovies = [
   image: 'https://avatars.mds.yandex.net/get-zen_doc/2408175/pub_5ee3288b64d6731cc9e19ddd_5ee329d302f56d5bd137a534/scale_1200' 
 }, 
 ]; 
- /*const mainHeader = document.querySelector('.header__place_main');*/
+
+
 
 function App(props) {
+  const [isNavOpen, setIsNavOpen] = React.useState(false);
+  const [isMovieSaved, setIsMovieSaved] = React.useState(false);
+
+  function handleMenuButtonClick() {
+    setIsNavOpen(true);
+  }
+
+  function handleCloseButtonClick() {
+    setIsNavOpen(false);
+  }
+
+  function handleLikeButtonClick() {
+    setIsMovieSaved(true);
+  }
+
   return (
     <div className="page">
       <Switch >
@@ -85,20 +101,20 @@ function App(props) {
           <Footer />
         </Route>
         <Route exact path="/movies">
-          <Navigation isMain={false}/>
-          <Header />
-          <Movies movies={initialMovies}/>
+          <Navigation isNavOpen={isNavOpen} onNavClose={handleCloseButtonClick} isMain={false}/>
+          <Header onNavOpen={handleMenuButtonClick} />
+          <Movies onMovieLike={handleLikeButtonClick} isMovieSaved={isMovieSaved} movies={initialMovies}/>
           <Footer />
         </Route>
         <Route exact path="/saved-movies">
-          <Navigation isMain={false}/>
-          <Header />
+          <Navigation isNavOpen={isNavOpen} onNavClose={handleCloseButtonClick} isMain={false}/>
+          <Header onNavOpen={handleMenuButtonClick}/>
           <SavedMovies movies={initialMovies} isSavedMovies={true}/>
           <Footer />
         </Route>
         <Route exact path="/profile">
-          <Navigation isMain={false}/>
-          <Header />
+          <Navigation isNavOpen={isNavOpen} onNavClose={handleCloseButtonClick} isMain={false}/>
+          <Header onNavOpen={handleMenuButtonClick}/>
           <Profile />
         </Route>
         <Route exact path="/sign-up">
