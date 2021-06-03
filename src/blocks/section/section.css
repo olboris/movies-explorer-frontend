@@ -1,8 +1,5 @@
-@import url(./__title/section__title.css);
 @import url(./__heading/section__heading.css);
 @import url(./__text/section__text.css);
-@import url(./__promo/section__promo.css);
-@import url(./__about-project/section__about-project.css);
 @import url(./__text/_place_techs/section__text_place_techs.css);
 @import url(./__text/_place_about-me/section__text_place_about-me.css);
 
