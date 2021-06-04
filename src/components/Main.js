@@ -1,7 +1,7 @@
 import React from 'react';
-import Promo from '../Promo/Promo.js';
+import Promo from './Promo.js';
 import AboutProject from '../AboutProject/AboutProject.js';
-import Techs from '../Techs/Techs.js';
+import Techs from './Techs.js';
 import AboutMe from '../AboutMe/AboutMe.js';
 
 function Main(props) {

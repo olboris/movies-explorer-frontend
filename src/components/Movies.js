@@ -1,6 +1,6 @@
 import React from 'react';
-import SearchForm from '../SearchForm/SearchForm.js';
-import MoviesCardList from '../MoviesCardList/MoviesCardList.js';
+import SearchForm from './SearchForm.js';
+import MoviesCardList from './MoviesCardList.js';
 
 function Movies(props) {
   

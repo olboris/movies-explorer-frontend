@@ -1,5 +1,5 @@
 import React from 'react';
-import MoviesCard from '../MoviesCard/MoviesCard.js';
+import MoviesCard from './MoviesCard.js';
 
 function MoviesCardList(props) {
   
