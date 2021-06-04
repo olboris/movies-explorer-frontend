@@ -1,0 +1,8 @@
+.movies-card__like_active {
+    background-image: url(../../../../images/saved-logo.svg);
+    width: 21px;
+    height: 21px;
+    font-size: 0px;
+    background-size: contain;
+    visibility: visible;
+}

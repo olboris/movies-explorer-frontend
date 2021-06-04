@@ -1,0 +1,26 @@
+.auth-page__save-button {
+    margin: auto 0 16px;
+    width: 100%;
+    height: 45px;
+    border: none;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border-radius: 3px;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0em;
+    text-align: center;
+    
+}
+
+@media screen and (max-width: 550px) {
+    .auth-page__save-button {
+        margin-bottom: 14px;
+        font-size: 12px;
+        line-height: 15px;
+    }
+}

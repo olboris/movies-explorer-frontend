@@ -1,0 +1,4 @@
+.auth-page__inputs-container {
+    display: flex;
+    flex-direction: column;
+}

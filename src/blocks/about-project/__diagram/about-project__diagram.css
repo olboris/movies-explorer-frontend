@@ -1,0 +1,12 @@
+.about-project__diagram {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+@media screen and (max-width: 578px) {
+    .about-project__diagram {
+        grid-template-columns: 35% 65%;
+        
+    }
+}

@@ -1,0 +1,13 @@
+.not-found__error-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto 184px;
+}
+
+@media screen and (max-width: 550px) {
+    .not-found__error-container {
+       margin-bottom: auto;
+    }
+}

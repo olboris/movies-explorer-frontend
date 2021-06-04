@@ -1,0 +1,10 @@
+.section__text_place_about-me {
+    margin-left: 0px;
+    line-height: 22px;
+}
+
+@media screen and (min-width: 550px) {
+    .section__text_place_about-me {
+        text-align: left;
+    }
+}

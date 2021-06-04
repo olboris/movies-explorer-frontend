@@ -1,0 +1,21 @@
+.profile__exit-button {
+    border: none;
+    background: white;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0px;
+    text-align: center;
+    margin: 0 auto;
+    color: rgba(255, 64, 98, 1);
+
+}
+
+@media screen and (max-width: 550px) {
+    .profile__edit-button {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
