@@ -164,8 +164,6 @@ function App(props) {
     setIsNavOpen(false);
   }
 
-
-
   return (
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
