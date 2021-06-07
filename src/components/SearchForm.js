@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import FilterCheckbox from '../FilterCheckbox/FilterCheckbox.js';
+import FilterCheckbox from './FilterCheckbox.js';
 
 function SearchForm(props) {
   const [searchValue, setSearchValue] = useState("");
@@ -10,7 +10,7 @@ function SearchForm(props) {
 
   function handleSearch(e) {
     e.preventDefault();
-    props.search(searchValue);
+    props.searchMovies(searchValue);
     setSearchValue("");
   }
   

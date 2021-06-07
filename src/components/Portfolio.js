@@ -1,5 +1,5 @@
 import React from 'react';
-import portfolioPointer from '../../images/links-pointer.svg';
+import portfolioPointer from '../images/links-pointer.svg';
 
 function Portfolio(props) {
   

@@ -1,5 +1,5 @@
 import React from 'react';
-import miniLogo from '../../images/mini-logo.svg';
+import miniLogo from '../images/mini-logo.svg';
 import { Link } from 'react-router-dom';
 
 

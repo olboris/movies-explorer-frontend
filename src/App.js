@@ -1,17 +1,18 @@
 import React from 'react';
 import { Route, Switch, useHistory, Redirect } from 'react-router-dom';
-import { CurrentUserContext } from '../contexts/CurrentUserContext.js';
-import Login from './components/Login/Login';
-import Register from './components/Register/Register';
-import Main from './components/Main/Main';
-import PageNotFound from './components/PageNotFound/PageNotFound';
-import Movies from './components/Movies/Movies';
-import SavedMovies from './components/SavedMovies/SavedMovies';
-import Profile from './components/Profile/Profile';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import Navigation from './components/Navigation/Navigation';
+/*import { CurrentUserContext } from '../contexts/CurrentUserContext.js';*/
+import Login from './components/Login';
+import Register from './components/Register';
+import Main from './components/Main';
+import PageNotFound from './components/PageNotFound';
+import Movies from './components/Movies';
+import SavedMovies from './components/SavedMovies';
+import Profile from './components/Profile';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Navigation from './components/Navigation';
 import auth from './utils/Auth';
+import moviesApi from './utils/MoviesApi';
 
 const initialMovies = [ 
   { 
@@ -82,8 +83,14 @@ function App(props) {
   const [isNavOpen, setIsNavOpen] = React.useState(false);
   const [loggedIn, setLoggedIn] = React.useState(false);
   const [userName, setUserName] = React.useState('');
-  const [currentUser, setCurrentUser] = React.useState(' ');
+  /*const [currentUser, setCurrentUser] = React.useState(' ');*/
+  const [movies, setMovies] = React.useState([]);
+  /*const [savedMovies, setSavedMovies] = React.useState([]);*/
+  const [foundMovies, setFoundMovies] = React.useState([]);
+  const [isMoviesNotFound, setIsMoviesNotFound] = React.useState(false);
   const history = useHistory();
+  const [selectedMovie, setSelectedMovie] = React.useState({});
+  const [isTrailerPopupOpen, setIsTrailerPopupOpen] = React.useState(false);
 
   const tokenCheck = React.useCallback(() => {
     const token = localStorage.getItem('token');
@@ -136,7 +143,58 @@ function App(props) {
       })
   }
 
+ /* function onRegister(email, password) {
+    auth.register(email, password)
+      .then(() => {
+        history.push('/movies');
+        infoToolSuccess();
+      })
+      .then((data) = {
+        auth.authorize(data.email, data.password);
+      }
+      .catch((err) => {
+        console.log(err);
+        /*infoToolFail();
+      })
+  }*/
+
+  /*function getMoviesList() {
+    moviesApi.getMovies()
+    .then((res) =>
+      setMovies(res.data))
+    .catch((err) => {
+      console.log(err)
+    })
+  }*/
+
+  /*React.useEffect(() => {
+    setFoundMovies(onSearchMovies)
+ }, [])*/
+
+
+  function onSearchMovies(searchValue) {
+    setFoundMovies([]);
+    moviesApi.getMovies()
+    .then((res) => {
+      const foundArray = res.filter(item => item.nameRU.includes(searchValue))
+      if (foundArray.length === 0) {
+        setIsMoviesNotFound(true);
+      } else {
+      setFoundMovies(foundArray);
+      console.log(foundArray);
+      }
+      localStorage.setItem('movies', JSON.stringify(foundMovies));
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  }
+
   React.useEffect(() => {
+    setMovies(JSON.parse(localStorage.getItem('movies')));
+  }, []);
+
+  /*React.useEffect(() => {
     MainApi.getUser()
       .then((res) => {
         setCurrentUser(res);
@@ -144,9 +202,9 @@ function App(props) {
       .catch((err) => {
         console.log(err)
       })
-  }, []);
+  }, []);*/
 
-  function handleUpdateUser({ name, about }) {
+  /*function handleUpdateUser({ name, about }) {
     MainApi.setUser({ name, about })
       .then((res) => {
         setCurrentUser(res);
@@ -154,7 +212,7 @@ function App(props) {
       .catch((err) => {
         console.log(err)
       })
-  }
+  }*/
 
   function handleMenuButtonClick() {
     setIsNavOpen(true);
@@ -164,8 +222,17 @@ function App(props) {
     setIsNavOpen(false);
   }
 
+  function handleMovieClick(movie) {
+    setSelectedMovie(movie);
+    setIsTrailerPopupOpen(true);
+  }
+
+  function closeTrailerPopup() {
+    setIsTrailerPopupOpen(false);
+  };
+
   return (
-    <CurrentUserContext.Provider value={currentUser}>
+    /*<CurrentUserContext.Provider /*value={currentUser}>*/
       <div className="page">
         <Switch >
           <Route exact path="/">
@@ -174,21 +241,38 @@ function App(props) {
             <Footer />
           </Route>
           <Route exact path="/movies">
-            <Navigation isNavOpen={isNavOpen} onNavClose={handleCloseButtonClick} isMain={false}/>
+            <Navigation 
+              isNavOpen={isNavOpen}
+              onNavClose={handleCloseButtonClick} 
+              isMain={false}
+            />
             <Header onNavOpen={handleMenuButtonClick} />
-            <Movies movies={initialMovies}/>
+            <Movies 
+              foundMovies={foundMovies}
+              searchMovies={onSearchMovies}
+              onMovieClick={handleMovieClick}
+              isOpen={isTrailerPopupOpen}
+              onClose={closeTrailerPopup}
+              movie={selectedMovie}
+              isMoviesNotFound = {isMoviesNotFound}
+            />
             <Footer />
           </Route>
           <Route exact path="/saved-movies">
             <Navigation isNavOpen={isNavOpen} onNavClose={handleCloseButtonClick} isMain={false}/>
             <Header onNavOpen={handleMenuButtonClick}/>
-            <SavedMovies movies={initialMovies} isSavedMovies={true}/>
+            <SavedMovies 
+              savedMovies={initialMovies}
+              isSavedMovies={true}
+              isOpen={isTrailerPopupOpen}
+              onClose={closeTrailerPopup}
+              movie={selectedMovie}/>
             <Footer />
           </Route>
           <Route exact path="/profile">
             <Navigation isNavOpen={isNavOpen} onNavClose={handleCloseButtonClick} isMain={false}/>
             <Header onNavOpen={handleMenuButtonClick}/>
-            <Profile userName={userName} onUpdateUser={handleUpdateUser}/>
+            <Profile userName={userName} /*onUpdateUser={handleUpdateUser}*//>
           </Route>
           <Route exact path="/sign-up">
             <Register handleRegister={onRegister}/>
@@ -204,7 +288,7 @@ function App(props) {
           </Route>
         </ Switch>
       </div>
-    </CurrentUserContext.Provider>
+   /* </CurrentUserContext.Provider>*/
   );
 }
 

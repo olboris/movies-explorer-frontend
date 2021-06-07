@@ -1,6 +1,6 @@
 import React from 'react';
-import studentFoto from '../../images/student-foto.jpeg';
-import Portfolio from '../Portfolio/Portfolio.js';
+import studentFoto from '../images/student-foto.jpeg';
+import Portfolio from './Portfolio';
 
 function AboutMe(props) {
   

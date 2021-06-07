@@ -1,0 +1,9 @@
+@import url(./_hidden/movies-notfound_hidden.css);
+@import url(./__info/movies-notfound__info.css);
+
+.movies-notfound {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
