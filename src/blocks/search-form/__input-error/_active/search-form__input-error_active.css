@@ -1,6 +1,4 @@
-@import url(./__info/movies-notfound__info.css);
-
-.movies-notfound {
+.search-form__input-error_active {
     display: flex;
     align-items: center;
     justify-content: center;

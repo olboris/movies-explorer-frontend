@@ -174,6 +174,7 @@ function App(props) {
 
   function onSearchMovies(searchValue) {
     setFoundMovies([]);
+    setIsMoviesNotFound(false);
     moviesApi.getMovies()
     .then((res) => {
       const foundArray = res.filter(item => item.nameRU.includes(searchValue))

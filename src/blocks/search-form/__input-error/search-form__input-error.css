@@ -1,0 +1,18 @@
+.search-form__input-error {
+    display: none;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: red;
+    margin-bottom: 32px;
+}
+
+@media screen and (max-width: 550px) {
+    .search-form__input-error {
+        margin-bottom: 40px;
+    }    
+}
