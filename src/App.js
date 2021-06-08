@@ -88,9 +88,11 @@ function App(props) {
   /*const [savedMovies, setSavedMovies] = React.useState([]);*/
   const [foundMovies, setFoundMovies] = React.useState([]);
   const [isMoviesNotFound, setIsMoviesNotFound] = React.useState(false);
+  const [isServerError, setIsServerError] = React.useState(false);
   const history = useHistory();
   const [selectedMovie, setSelectedMovie] = React.useState({});
   const [isTrailerPopupOpen, setIsTrailerPopupOpen] = React.useState(false);
+  const [isChecked, setIsCkecked] = React.useState(false);
 
   const tokenCheck = React.useCallback(() => {
     const token = localStorage.getItem('token');
@@ -158,42 +160,69 @@ function App(props) {
       })
   }*/
 
-  /*function getMoviesList() {
-    moviesApi.getMovies()
-    .then((res) =>
-      setMovies(res.data))
-    .catch((err) => {
-      console.log(err)
-    })
-  }*/
+  function handleChangeCheck () {
+    setIsCkecked(!isChecked);
+  }
 
-  /*React.useEffect(() => {
-    setFoundMovies(onSearchMovies)
- }, [])*/
-
+  function showNotFoundInfo () {
+    setIsMoviesNotFound(true);
+    setMovies([]);
+  }
 
   function onSearchMovies(searchValue) {
-    setFoundMovies([]);
+    setMovies([]);
     setIsMoviesNotFound(false);
+    setIsServerError(false);
+
     moviesApi.getMovies()
     .then((res) => {
-      const foundArray = res.filter(item => item.nameRU.includes(searchValue))
-      if (foundArray.length === 0) {
-        setIsMoviesNotFound(true);
-      } else {
-      setFoundMovies(foundArray);
+      const foundArray = res.filter(item => item.nameRU.includes(searchValue));
       console.log(foundArray);
-      }
-      localStorage.setItem('movies', JSON.stringify(foundMovies));
+      /*const foundArray = Object.values(foundResult);*/
+      
+      if (foundArray.length === 0) {
+        return showNotFoundInfo();
+      } else setMovies(
+        foundArray.forEach((item) => {
+        if (!isChecked) {
+          return setMovies({foundArray});
+        } else if (isChecked && item.duration <= 40) {
+          return setMovies({foundArray});
+        } else {
+          return showNotFoundInfo();
+        }
+      })
+      );
+        console.log(foundArray);
+        console.log(movies);
+     /* } else {
+        const shortFoundArray = foundArray.filter(item => item.duration <= 40);
+        if (shortFoundArray.length === 0) {
+          showNotFoundInfo();
+        } else {
+          return setFoundMovies(Object.values(shortFoundArray));
+          /*console.log(foundMovies);
+        }
+      }*/
+      console.log(typeof(movies));
+      localStorage.setItem('movies', JSON.stringify(movies));
+      console.log(JSON.parse(localStorage.getItem('movies')));
     })
     .catch((err) => {
-      console.log(err)
+      console.log(err);
+      setIsServerError(true);
     })
+
   }
 
   React.useEffect(() => {
-    setMovies(JSON.parse(localStorage.getItem('movies')));
-  }, []);
+    const searchResult = localStorage.getItem('movies');
+    console.log(searchResult);
+    if (searchResult){
+    setMovies(JSON.parse(searchResult));
+    console.log(movies);
+    }
+  }, [setMovies]);
 
   /*React.useEffect(() => {
     MainApi.getUser()
@@ -249,13 +278,16 @@ function App(props) {
             />
             <Header onNavOpen={handleMenuButtonClick} />
             <Movies 
-              foundMovies={foundMovies}
+              movies={movies}
               searchMovies={onSearchMovies}
               onMovieClick={handleMovieClick}
               isOpen={isTrailerPopupOpen}
               onClose={closeTrailerPopup}
               movie={selectedMovie}
               isMoviesNotFound = {isMoviesNotFound}
+              isServerError = {isServerError}
+              isChecked={isChecked}
+              handleChangeCheck={handleChangeCheck}
             />
             <Footer />
           </Route>

@@ -5,7 +5,7 @@ function FilterCheckbox(props) {
     return (
       <label className="filter-checkbox">
         <div className="filter-checkbox__toggle">
-          <input className="filter-checkbox__toggle-state" type="checkbox" name="check" value="check"></input>
+          <input className="filter-checkbox__toggle-state" type="checkbox" name="check" onClick={props.handleChangeCheck} defaultChecked={props.isChecked}></input>
           <div className="filter-checkbox__toggle-inner">
             <div className="filter-checkbox__indicator"></div>
           </div>

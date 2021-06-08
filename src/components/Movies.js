@@ -2,18 +2,20 @@ import React from 'react';
 import SearchForm from './SearchForm.js';
 import MoviesCardList from './MoviesCardList.js';
 import MoviesNotFound from './MoviesNotFound.js';
+import ServerErrorInfo from './ServerErrorInfo.js';
 
-function Movies(props) {
- 
+function Movies(props) { 
+
     return (
       <main className="content">
-        <SearchForm searchMovies={props.searchMovies}/>
+        <SearchForm searchMovies={props.searchMovies} handleChangeCheck={props.handleChangeCheck} isChecked={props.isChecked}/>
         {
-        props.foundMovies.length > 0 
-        ? <MoviesCardList isOpen={props.isOpen} onClose={props.onClose} movie={props.movie} onMovieLike={props.onMovieLike} onMovieClick={props.onMovieClick} isMovieSaved={props.isMovieSaved} movies={props.foundMovies}/>
+        props.movies.length > 0 
+        ? <MoviesCardList isOpen={props.isOpen} onClose={props.onClose} movie={props.movie} onMovieLike={props.onMovieLike} onMovieClick={props.onMovieClick} isMovieSaved={props.isMovieSaved} movies={props.movies}/>
         : <></> 
         }
         <MoviesNotFound isMoviesNotFound={props.isMoviesNotFound} />
+        <ServerErrorInfo isServerError={props.isServerError} />
           <button type="button" className="movies-cardlist__more-button">Ещё</button>
       </main>
     ); 

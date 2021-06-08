@@ -27,7 +27,7 @@ function SearchForm(props) {
             <button className="search-form__button">Найти</button>
           </div>
           <div className={`search-form__input-error ${inputError && 'search-form__input-error_active'}`}>Нужно ввести ключевое слово</div>
-          <FilterCheckbox />
+          <FilterCheckbox handleChangeCheck={props.handleChangeCheck} isChecked={props.isChecked}/>
         </form> 
     ); 
   }
