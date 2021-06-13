@@ -19,3 +19,9 @@
         line-height: 15px;
     }
 }
+
+.profile__exit-button:hover {
+    opacity: 0.6;
+    transition: opacity 1s ease-out;
+    cursor: pointer;
+}

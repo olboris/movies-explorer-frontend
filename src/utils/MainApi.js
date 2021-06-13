@@ -5,15 +5,15 @@ class MainApi {
     }
 
     
-   /* getInitialCards() {
-        return fetch(`${this._baseUrl}/cards`, {
+   getMovies() {
+        return fetch(`${this._baseUrl}/movies`, {
             method: 'GET',
             headers: this._headers,
         })
             .then((res) => {
                 return this._getResponseData(res);
             })
-    }*/
+    }
 
     getUser() {
         return fetch(`${this._baseUrl}/users/me`, {
@@ -39,23 +39,32 @@ class MainApi {
             })
     }
 
-   /* addCard(data) {
-        return fetch(`${this._baseUrl}/cards`, {
+   saveMovie(data) {
+        return fetch(`${this._baseUrl}/movies`, {
             method: 'POST',
             headers: this._headers,
             body: JSON.stringify({
-                name: data.name,
-                link: data.link
+                country: data.country,
+                director: data.director,
+                duration: data.duration,
+                year: data.year,
+                description: data.description,
+                image: `https://api.nomoreparties.co${data.image.url}`,
+                trailer: data.trailerLink,
+                thumbnail: `https://api.nomoreparties.co${data.image.url}`,
+                movieId: data.id,
+                nameRU: data.nameRU,
+                nameEN: data.nameEN,
             })
         })
 
             .then((res) => {
                 return this._getResponseData(res);
             })
-    }*/
+    }
 
-    /*deleteCard(_id) {
-        return fetch(`${this._baseUrl}/cards/${_id}`, {
+    deleteMovie(_id) {
+        return fetch(`${this._baseUrl}/movies/${_id}`, {
             method: 'DELETE',
             headers: this._headers,
         })
@@ -65,7 +74,7 @@ class MainApi {
 
     }
 
-    changeLikeCardStatus(_id, isLiked) {
+    /*changeLikeCardStatus(_id, isLiked) {
         if (isLiked) {
             return fetch(`${this._baseUrl}/cards/${_id}/likes`, {
             method: 'PUT',

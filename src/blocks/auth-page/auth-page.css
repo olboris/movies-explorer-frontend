@@ -6,6 +6,7 @@
 @import url(./__redirect-span/auth-page__redirect-span.css);
 @import url(./__redirect-span/_link/auth-page__redirect-span_link.css);
 @import url(./__save-button/auth-page__save-button.css);
+@import url(./__save-button/_disable/auth-page__save-button_disable.css);
 @import url(./__title/auth-page__title.css);
 @import url(./__placeholder/auth-page__placeholder.css);
 @import url(./__input-error/auth-page__input-error.css);

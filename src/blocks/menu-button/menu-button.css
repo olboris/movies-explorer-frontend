@@ -4,7 +4,7 @@
     background-image: url(../../images/menu-button.svg);
     background-position: center;
     background-size: auto;
-    background-color: white;
+    background-color: transparent;
     width: 44px;
     height: 44px;
     cursor: pointer;
@@ -15,4 +15,17 @@
     opacity: 0.6;
     transition: opacity 1s ease-out;
     cursor: pointer;
+}
+
+@media screen and (min-width: 1024px) {
+    .menu-button {
+        visibility: hidden;
+        display: none;
+    }
+
+    .menu-button:hover {
+        cursor: auto;
+        transition: none;
+        opacity: 1;
+    }
 }

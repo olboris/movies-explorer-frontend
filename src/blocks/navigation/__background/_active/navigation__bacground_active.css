@@ -1,0 +1,4 @@
+.navigation__background_active {
+    visibility: visible;
+    transition: visibility 0.5s, opacity 0.5s linear;
+}

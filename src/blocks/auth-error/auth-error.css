@@ -1,0 +1,23 @@
+.auth-error {
+    display: none;
+    border: none;
+    background: white;
+    font-family: Inter;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0px;
+    text-align: center;
+    margin: 0 auto;
+    color: rgba(255, 64, 98, 1);
+    margin: auto 0 16px;
+}
+
+@media screen and (max-width: 550px) {
+    .auth-error {
+        margin-bottom: 14px;
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
