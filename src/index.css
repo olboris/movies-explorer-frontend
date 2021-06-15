@@ -17,6 +17,7 @@
 @import url(./blocks/header/_hidden/header_hidden.css);
 @import url(./blocks/navigation/navigation.css);
 @import url(./blocks/navigation/_place_main/navigation_place_main.css);
+@import url(./blocks/navigation/_hidden/navigation_hidden.css);
 @import url(./blocks/auth-page/auth-page.css);
 @import url(./blocks/logo/logo.css);
 @import url(./blocks/menu-button/menu-button.css);

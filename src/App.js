@@ -47,7 +47,7 @@ function App(props) {
           if (res) {
             setLoggedIn(true);
             setUserName(res.name);
-            /*history.push('/movies');*/
+            history.push('/movies');
           }
         })
         .catch((err) => {
