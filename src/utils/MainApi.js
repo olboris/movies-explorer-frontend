@@ -11,6 +11,7 @@ class MainApi {
             headers: this._headers,
         })
             .then((res) => {
+                console.log(res.data);
                 return this._getResponseData(res);
             })
     }
@@ -73,28 +74,6 @@ class MainApi {
             })
 
     }
-
-    /*changeLikeCardStatus(_id, isLiked) {
-        if (isLiked) {
-            return fetch(`${this._baseUrl}/cards/${_id}/likes`, {
-            method: 'PUT',
-            headers: this._headers,
-        })
-            .then((res) => {
-                return this._getResponseData(res);
-            })
-
-        }
-        else {
-            return fetch(`${this._baseUrl}/cards/${_id}/likes`, {
-                method: 'DELETE',
-                headers: this._headers,
-            })
-                .then((res) => {
-                    return this._getResponseData(res);
-                })
-        }
-    }*/
 
     _getResponseData(res) {
         if (res.ok) {
