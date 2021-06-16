@@ -24,7 +24,7 @@ function Movies(props) {
         props.movies.length > 0 
         ? <MoviesCardList
         movies={props.movies}
-        isSavedMovies={props.isSavedMovies}
+        isSavedMovies={false}
         savedMovies={props.savedMovies}
         deleteMovie={props.deleteMovie}
         saveMovie={props.saveMovie}

@@ -11,7 +11,6 @@ class MainApi {
             headers: this._headers,
         })
             .then((res) => {
-                console.log(res.data);
                 return this._getResponseData(res);
             })
     }
@@ -77,6 +76,7 @@ class MainApi {
 
     _getResponseData(res) {
         if (res.ok) {
+            console.log(res);
             return res.json();
         }
         return Promise.reject(new Error(`Ошибка: ${res.status}`));

@@ -233,6 +233,7 @@ function showUpdateUnsuccessMessage(){
   function getSavedMovies () {
     mainApi.getMovies()
       .then((res) => {
+        console.log(res.data);
         setSavedMovies(res.data);
       })
       .catch((err) => {
@@ -299,7 +300,6 @@ function showUpdateUnsuccessMessage(){
             handleChangeCheck={handleChangeCheck}
             isChecked={isChecked}
             movies={movies}
-            isSavedMovies={false}
             savedMovies={savedMovies}
             deleteMovie={deleteMovie}
             saveMovie={saveMovie}
@@ -329,7 +329,6 @@ function showUpdateUnsuccessMessage(){
             isMoviesNotFound = {isMoviesNotFound}
             isServerError = {isServerError}
             isLoading={isLoading}
-            isSavedMovies={true}
             onMovieClick={handleMovieClick} 
             isOpen={isTrailerPopupOpen}
             onClose={closeTrailerPopup}

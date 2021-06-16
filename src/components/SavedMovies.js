@@ -24,7 +24,7 @@ function SavedMovies(props) {
         onClose={props.onClose}
         
         movies={props.movies}
-        isSavedMovies={props.isSavedMovies}
+        isSavedMovies={true}
         savedMovies={props.savedMovies}
         deleteMovie={props.deleteMovie}
         saveMovie={props.saveMovie}

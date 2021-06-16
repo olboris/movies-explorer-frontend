@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import MoviesCard from './MoviesCard.js';
 import GetWindowWidth from '../hooks/getWindowWidth';
-/*import TrailerPopup from './TrailerPopup.js'*/
+import { CurrentUserContext } from '../contexts/CurrentUserContext.js';
 
 function MoviesCardList(props) {
   
   const [numberMovies, setNumberMovies] = React.useState(12);
   const windowWidth = GetWindowWidth();
+  const currentUser = React.useContext(CurrentUserContext);
 
   function showMoreMovies() {
     if (windowWidth > 1024) {
@@ -29,7 +30,23 @@ function MoviesCardList(props) {
     return (
       <section>
       <div className="movies-cardlist">
-          {props.movies.slice(0, numberMovies).map((item) => {
+        {props.isSavedMovies 
+        ? props.movies.slice(0, numberMovies).map(function(item) {
+          if (item.owner === currentUser._id) {
+            return (
+          <MoviesCard
+          isSavedMovies={props.isSavedMovies}
+          savedMovies={props.savedMovies}
+          movie={item}
+          key={item.id}
+          deleteMovie={props.deleteMovie}
+          saveMovie={props.saveMovie}
+          onMovieClick={props.onMovieClick}         
+          />
+        )
+        }
+        })
+        : props.movies.slice(0, numberMovies).map((item) => {
             return (
             <MoviesCard
             isSavedMovies={props.isSavedMovies}
@@ -41,7 +58,8 @@ function MoviesCardList(props) {
             onMovieClick={props.onMovieClick}         
             />
             )
-          })}
+          })
+          }
       </div>
       <button type="button" onClick={showMoreMovies} className={`movies-cardlist__more-button ${numberMovies >= props.movies.length && 'movies-cardlist__more-button_hidden'}`}>Ещё</button>
       </section>

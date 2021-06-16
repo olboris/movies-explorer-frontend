@@ -49,7 +49,7 @@ function MoviesCard(props) {
               : 'movies-card__like'
             }
             /*</div>`movies-card__like ${props.isSavedMovies && 'movies-card__like_delete'} ${isMovieSaved() ? 'movies-card__like_active': ''}`}*/>Сохранить</button>
-          <div className="movies-card__poster" alt="Постер" onClick={handleClick} style={{ backgroundImage: `url(https://api.nomoreparties.co${props.movie.image.url})` }}></div>
+          <div className="movies-card__poster" alt="Постер" onClick={handleClick} style={{ backgroundImage: props.isSavedMovies ? `url(${props.movie.image})` :`url(https://api.nomoreparties.co${props.movie.image.url})` }}></div>
           <div className="movies-card__description">
               <h3 className="movies-card__title">{props.movie.nameRU}</h3>
               <h3 className="movies-card__duration">{displayDuration(props.movie.duration)}</h3>
