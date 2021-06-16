@@ -1,4 +1,5 @@
 import React from 'react';
+import { CurrentUserContext } from '../contexts/CurrentUserContext.js';
 
 function MoviesCard(props) {
 
@@ -10,6 +11,7 @@ function MoviesCard(props) {
 
     return (displayTime)
   };
+  const currentUser = React.useContext(CurrentUserContext);
 
   function onMovieLike () {
     const a = isMovieSaved();
@@ -31,7 +33,9 @@ function MoviesCard(props) {
 
   const isMovieSaved = () => {
     return props.savedMovies.find((item) => {
+      if (item.owner === currentUser._id){
       return item.nameRU.includes(props.movie.nameRU);
+      }
     });
   };
 
@@ -48,7 +52,7 @@ function MoviesCard(props) {
               ? 'movies-card__like movies-card__like_active'
               : 'movies-card__like'
             }
-            /*</div>`movies-card__like ${props.isSavedMovies && 'movies-card__like_delete'} ${isMovieSaved() ? 'movies-card__like_active': ''}`}*/>Сохранить</button>
+            >Сохранить</button>
           <div className="movies-card__poster" alt="Постер" onClick={handleClick} style={{ backgroundImage: props.isSavedMovies ? `url(${props.movie.image})` :`url(https://api.nomoreparties.co${props.movie.image.url})` }}></div>
           <div className="movies-card__description">
               <h3 className="movies-card__title">{props.movie.nameRU}</h3>
