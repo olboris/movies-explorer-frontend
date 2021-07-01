@@ -1,6 +1,7 @@
 @import url(./_place/_auth-page/logo_place_auth-page.css);
 @import url(./_place/_nav/logo_place_nav.css);
 @import url(./_hidden/logo_hidden.css);
+@import url(./__link/logo__link.css);
 
 .logo {
     width: 38px;

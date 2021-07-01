@@ -1,0 +1,17 @@
+@import url(./__close-button/trailer-popup__close-button.css);
+@import url(./__video/trailer-popup__video.css);
+@import url(./__video-container/trailer-popup__video-container.css);
+@import url(./__figure/trailer-popup__figure.css);
+@import url(./__video-caption/trailer-popup__video-caption.css);
+
+.trailer-popup {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.5s linear;
+}

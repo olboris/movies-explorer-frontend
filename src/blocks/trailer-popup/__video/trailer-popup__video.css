@@ -1,0 +1,6 @@
+.trailer-popup__video {
+    width: 100%;
+    object-fit: cover;
+    max-height: 75vh;
+    max-width: 75vw;
+}

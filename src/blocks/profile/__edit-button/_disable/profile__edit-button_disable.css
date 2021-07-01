@@ -1,0 +1,10 @@
+.profile__edit-button_disable {
+    color: grey;
+}
+
+
+.profile__edit-button_disable:hover {
+    cursor: auto;
+    transition: none;
+    opacity: 1;
+}

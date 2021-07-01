@@ -8,16 +8,15 @@
     height: 74px;
     padding-right: 70px;
     padding-left: 70px;
+    background-color: rgba(243, 193, 248, 1);
     display: flex;
     position: relative;
     align-items: center;
     justify-content: space-between;
-    visibility: hidden;
 }
 
 @media screen and (min-width: 550px) and (max-width: 1024px) {
     .header {
-        visibility: visible;
         padding-right: 30px;
         padding-left: 30px;
     } 
@@ -25,7 +24,6 @@
 
 @media screen and (max-width: 550px) {
     .header {
-        visibility: visible;
         padding-right: 14px;
         padding-left: 14px;
     } 

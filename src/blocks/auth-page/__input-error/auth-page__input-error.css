@@ -1,5 +1,5 @@
 .auth-page__input-error {
-    visibility: hidden;
+   /* visibility: hidden;*/
     font-family: Inter;
     font-size: 10px;
     font-style: normal;
